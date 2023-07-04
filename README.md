@@ -1,5 +1,4 @@
 # Design Patterns in Java
-
 ## [1. Builder Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/blob/250fb38f5f38d8f12eca0c54490da00ccc7fae00/com.nikhilrana/src/Builder_Design_Pattern)
 The Builder design pattern is a creational design pattern that is used to 
 construct complex objects step by step. It provides a flexible and fluent 
@@ -25,7 +24,7 @@ Problems without builder-design pattern are:
 2. Overhead: The Builder pattern adds extra overhead to the codebase, as it involves creating separate builder objects and executing multiple method calls to construct an object.
 3. Potential performance impact: The Builder pattern may have a slight performance impact compared to direct object construction, especially for simple objects with fewer parameters.
 
-## [2. Decorator Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/blob/250fb38f5f38d8f12eca0c54490da00ccc7fae00/com.nikhilrana/src/Decorator_Design_Pattern)
+## [2. Decorator Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/Decorator_Design_Pattern)
 The Decorator design pattern is a structural design pattern that allows 
 behavior to be added to an object dynamically at runtime. It provides an 
 alternative to subclassing for extending the functionality of an object by 
@@ -63,3 +62,37 @@ responsibility.
 1. Complex object creation: The use of decorators can lead to a more complex object creation process, especially when multiple decorators are involved.
 2. Increased number of classes: With the decorator pattern, the number of classes can increase as decorators are added, which can make the codebase more complex.
 3. Potential performance impact: Decorators introduce additional layers of indirection, which may impact performance, especially if there are many decorators or frequent method calls.
+
+## [3. Singleton Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/blob/f7a6f68109ca3d5295137267b9232f1a382842fd/com.nikhilrana/src/Singleton_Design_Pattern)
+The Singleton design pattern is a creational pattern that ensures a class has only one instance, and provides 
+a global point of access to it.
+
+Problems without use of singleton design-pattern are:
+- Multiple instances: Without enforcing a single instance, multiple instances of a class can be created, 
+leading to redundancy and unnecessary resource consumption.
+- Inconsistent state: In a multithreaded environment, multiple instances can result in inconsistent state 
+if different instances are accessed and modified concurrently.
+- Lack of centralized control: Without a Singleton, there is no centralized control over the creation and 
+access to the instance, making it harder to manage and coordinate the usage of the class.
+- Increased coupling: If multiple instances of a class are created throughout the codebase, it can introduce 
+higher coupling between different components, making the code more difficult to maintain and modify.
+- Performance overhead: Creating multiple instances when a single instance would suffice can lead to 
+unnecessary performance overhead, especially if the class involves heavy initialization or 
+resource acquisition.
+
+### Pros
+1. Controlled access to the sole instance: It guarantees that only one instance of the class exists, 
+allowing controlled access to that instance.
+2. Global access: The singleton instance can be accessed globally, simplifying the usage and avoiding 
+the need for passing instances between different parts of the codebase.
+3. Lazy initialization: The singleton instance is created only when it is first requested, 
+saving resources and improving performance.
+4. Thread safety: Properly implemented singletons can handle concurrent access and maintain thread safety.
+
+### Cons
+1. Global state: The use of a singleton can introduce global state, which can make the codebase more 
+complex and harder to maintain.
+2. Dependency management: The dependency of other classes on the singleton instance can make it 
+difficult to test and introduce tight coupling.
+3. Potential for overuse: It's important to use the singleton pattern judiciously, 
+as overuse can lead to code that is hard to understand and maintain.
