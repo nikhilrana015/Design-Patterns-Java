@@ -1,5 +1,5 @@
 # Design Patterns in Java
-## [1. Builder Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/blob/250fb38f5f38d8f12eca0c54490da00ccc7fae00/com.nikhilrana/src/Builder_Design_Pattern)
+## [1. Builder Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/Builder_Design_Pattern)
 The Builder design pattern is a creational design pattern that is used to 
 construct complex objects step by step. It provides a flexible and fluent 
 interface for creating objects with different configurations or parameters.
@@ -63,7 +63,7 @@ responsibility.
 2. Increased number of classes: With the decorator pattern, the number of classes can increase as decorators are added, which can make the codebase more complex.
 3. Potential performance impact: Decorators introduce additional layers of indirection, which may impact performance, especially if there are many decorators or frequent method calls.
 
-## [3. Singleton Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/blob/f7a6f68109ca3d5295137267b9232f1a382842fd/com.nikhilrana/src/Singleton_Design_Pattern)
+## [3. Singleton Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/Singleton_Design_Pattern)
 The Singleton design pattern is a creational pattern that ensures a class has only one instance, and provides 
 a global point of access to it.
 
@@ -96,3 +96,42 @@ complex and harder to maintain.
 difficult to test and introduce tight coupling.
 3. Potential for overuse: It's important to use the singleton pattern judiciously, 
 as overuse can lead to code that is hard to understand and maintain.
+
+## [4. Observer Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/Observer_Design_Pattern)
+The Observer design pattern is a behavioral pattern that defines a one-to-many dependency between objects. 
+It allows multiple objects, known as observers, to be notified and updated automatically when the state of 
+a subject object changes.
+
+Problems without use of observer design-pattern are:
+- Tight coupling: Without the Observer pattern, the subject and observers become tightly coupled, 
+as the subject needs direct knowledge of the observers to notify them. 
+This can result in a less flexible and more difficult to maintain codebase.
+- Lack of real-time updates: Without the Observer pattern, there is no automatic mechanism to notify 
+observers in real-time when the subject's state changes. Observers would need to constantly poll or 
+query the subject for updates, which can be inefficient and result in delayed notifications.
+- Manual state tracking: Without the Observer pattern, the subject would need to manually track and 
+notify all dependent objects whenever its state changes. This can lead to redundant code and increased 
+complexity, as the subject needs to know about each dependent object individually.
+- Limited reusability: The lack of a well-defined observer interface can limit the reusability of the 
+subject component. It becomes more difficult to reuse the subject with different observers or in different 
+contexts without significant modifications.
+
+### Pros
+1. Loose coupling: Observers are loosely coupled with the subject. They depend on the subject's interface 
+but are not tightly coupled to its implementation, promoting flexibility and maintainability.
+2. Easy extensibility: The pattern allows for easy addition or removal of observers without modifying the 
+subject or other observers, making it highly extensible.
+3. Real-time updates: Observers receive real-time updates when the state of the subject changes, allowing them 
+to react and take appropriate actions immediately.
+4. Decentralized control: The pattern enables a decentralized control flow, where the subject doesn't need to 
+have direct knowledge of the observers. This promotes a more modular and scalable design.
+
+### Cons
+1. Inefficiency with large numbers of observers: When there are a large number of observers, notifying all 
+of them can impact performance, as each observer needs to be updated individually.
+2. Unexpected updates: Observers may receive updates even when they are not interested in or capable of 
+handling them, leading to unnecessary processing or potential errors.
+3. Potential for memory leaks: If observers are not properly managed or unregistered when they are no longer 
+needed, it can result in memory leaks.
+4. Order of notification: The order in which observers are notified may not be guaranteed, which can lead to 
+different behaviors depending on the order of registration.
