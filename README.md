@@ -135,3 +135,54 @@ handling them, leading to unnecessary processing or potential errors.
 needed, it can result in memory leaks.
 4. Order of notification: The order in which observers are notified may not be guaranteed, which can lead to 
 different behaviors depending on the order of registration.
+
+## [5. Factory Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/Factory_Design_Pattern)
+The Factory design pattern is a creational pattern that provides an interface for creating objects 
+without specifying their concrete classes. It encapsulates the object creation logic within a factory 
+method, allowing the client code to use the factory method to create instances of objects.
+
+Problems without use of factory-design pattern are:
+- Tight Coupling: Without a factory, client code needs to directly instantiate concrete classes using the 
+`new` keyword. This creates tight coupling between the client code and the specific implementation classes, 
+making it harder to switch or replace implementations without modifying the client code.
+- Code Duplication: If object creation logic is scattered throughout the codebase, there is a higher 
+chance of code duplication. This can lead to maintenance issues and inconsistencies when creating objects in 
+different parts of the code.
+- Lack of Abstraction: Directly instantiating concrete classes limits the usage of abstractions and 
+interfaces. It becomes harder to work with higher-level types, as the client code is tightly coupled to 
+the specific implementation classes.
+- Difficulty in Testing: When objects are directly instantiated in the client code, it becomes challenging 
+to mock or replace those objects during unit testing. This can make writing comprehensive and isolated tests 
+more difficult.
+- Lack of Centralized Object Creation Logic: Without a factory, the object creation logic is spread 
+across different parts of the code. This makes it harder to maintain and update the object creation process 
+consistently.
+
+### Pros
+1. Encapsulation: The client code is decoupled from the specific implementation classes, as it only interacts 
+with the factory interface. This promotes encapsulation and provides flexibility in changing or adding new 
+concrete classes without impacting the client code.
+2. Abstraction: The factory method creates objects based on a common interface or abstract class, 
+allowing the client code to work with the abstract type. This promotes code abstraction and simplifies the 
+client code by operating on a higher-level interface.
+3. Code reuse: By centralizing the object creation logic in the factory method, 
+it can be reused across multiple client code sections. This avoids code duplication and promotes code 
+reuse, leading to cleaner and more maintainable code.
+4. Flexibility: The Factory design pattern allows for runtime determination of the concrete class 
+to be instantiated. This flexibility enables dynamic object creation based on specific conditions or 
+configurations.
+
+### Cons
+1. Dependency on the factory: The client code becomes dependent on the factory interface, which introduces 
+an additional layer of abstraction. If the factory implementation changes, it may require modifications to 
+the client code as well.
+2. Reduced control over object creation: With the Factory pattern, the client code delegates the 
+responsibility of object creation to the factory method. This can limit the control and customization 
+options available during object creation.
+3. Increased code complexity: The factory classes and the additional abstraction layer can 
+add complexity to the codebase. It may require developers to understand and work with the factory 
+interfaces and implementation classes.
+4. Complexity: Implementing the Factory design pattern can introduce additional complexity and overhead 
+compared to directly creating objects using the `new` keyword. It requires defining and maintaining the 
+factory interface and implementing factory classes for each concrete object type.
+
