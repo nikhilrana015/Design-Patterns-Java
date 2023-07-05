@@ -186,3 +186,55 @@ interfaces and implementation classes.
 compared to directly creating objects using the `new` keyword. It requires defining and maintaining the 
 factory interface and implementing factory classes for each concrete object type.
 
+## [6. Abstract Factory Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/AbstractFactory_Design_Pattern)
+The Abstract Factory design pattern provides an interface for creating families of related or 
+dependent objects without specifying their concrete classes. It allows the creation of objects that follow 
+a common theme or belong to a specific family of objects.
+
+Problems without use of abstract factory design pattern are:
+- Tight Coupling: Without the Abstract Factory pattern, client code is directly coupled to the concrete 
+classes used for object creation. This can make the code less flexible and harder to maintain, 
+as any changes in the concrete classes would require modifications in multiple places.
+- Lack of Abstraction: The absence of an abstract factory interface means that clients are 
+forced to work with concrete factory classes directly. This can limit extensibility and make it 
+challenging to introduce new families of related objects.
+- Code Duplication: Without an abstract factory, the responsibility of object creation is scattered 
+throughout the client code. This can result in code duplication, as similar object creation 
+logic needs to be replicated in multiple places.
+- Violation of Single Responsibility Principle: Object creation logic may be mixed with other 
+application logic, violating the principle of separating concerns. This can make the code harder to 
+understand, test, and maintain.
+
+### Pros
+1. Encourages Abstraction: Abstract Factory promotes the use of interfaces and abstract classes, 
+allowing clients to work with abstract types instead of concrete implementations. This enhances 
+flexibility and modularity in the codebase.
+2. Supports Dependency Injection: Abstract Factory can be used in conjunction with dependency injection 
+frameworks to decouple the client code from the specific implementations. It enables the injection of 
+different concrete factories at runtime, providing easy switching between families of related objects.
+3. Ensures Consistency: Abstract Factory ensures that all objects created by a specific factory adhere to a 
+common theme or design, ensuring consistency across the created objects.
+4. Allows Variation and Extensibility: Abstract Factory allows the addition of new concrete 
+factories and products without modifying the existing client code. It supports the introduction of new 
+families of objects or variations within existing families.
+5. Encapsulates Object Creation: The creation of objects is encapsulated within the factory, 
+abstracting away the specific implementation details. This promotes encapsulation and information hiding, 
+as clients only interact with the abstract factory and product interfaces.
+
+### Cons
+1. Complexity: Abstract Factory introduces additional abstraction layers, which can increase the 
+complexity of the codebase. It may not be suitable for small or simple projects where the variation of 
+families or objects is limited.
+2. Increased Code Overhead: The introduction of abstract factories and product families can lead to a 
+larger codebase with additional classes and interfaces. This may impact the initial development time 
+and maintenance efforts.
+3. Limited Extensibility: While Abstract Factory allows the addition of new families or 
+variations, it may become challenging to extend the abstract factory itself. Modifying the abstract factory 
+interface or adding new abstract methods may require modifications in all concrete factories.
+4. Runtime Configuration Challenges: Switching between different families of objects at runtime may introduce 
+configuration challenges. The client code needs to select the appropriate concrete factory based on certain 
+conditions, which can be complex to manage.
+5. Tighter Coupling with Product Families: The client code using the abstract factory is tightly coupled to 
+the product families created by that factory. Changing the product families or introducing new ones may 
+require modifications in the client code as well.
+
