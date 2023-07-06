@@ -238,3 +238,52 @@ conditions, which can be complex to manage.
 the product families created by that factory. Changing the product families or introducing new ones may 
 require modifications in the client code as well.
 
+## [7. Strategy Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/Strategy_Design_Pattern)
+The Strategy design pattern is a behavioral pattern that allows interchangeable algorithms or strategies to be 
+selected at runtime. It encapsulates each algorithm into a separate class, making them independent and easily 
+replaceable.
+
+Problems without use of strategy design patterns are:
+- Code Duplication: When different variations of an algorithm or behavior are implemented directly in the 
+client code, there is a higher chance of code duplication. This can lead to maintenance issues and 
+inconsistencies when implementing similar behaviors in different parts of the code.
+- Lack of Flexibility: Without the Strategy pattern, changing or swapping algorithms or behaviors at 
+runtime becomes more challenging. Modifications to the client code would be required, making the codebase 
+less flexible and harder to adapt to different scenarios or requirements.
+- Violation of Single Responsibility Principle: When different variations of a behavior are directly 
+implemented in the client code, it can result in violating the principle of separating concerns. 
+The client code may become bloated with multiple responsibilities, making it harder to understand, test, 
+and maintain.
+- Difficulty in Testing: When behavior is tightly coupled with the client code, it becomes harder to test 
+individual behaviors in isolation. This can make writing comprehensive and isolated tests more challenging, 
+leading to lower test coverage and potentially overlooked issues.
+- Increased Code Complexity: Without the Strategy pattern, the client code may become more complex as it 
+needs to handle the logic of multiple behaviors directly. This can make the codebase harder to understand, 
+debug, and maintain.
+
+### Pros
+1. Encapsulation: Algorithms or strategies are encapsulated in separate classes, promoting cleaner and more 
+modular code. Each strategy has its own class, making it easier to understand and maintain.
+2. Flexibility: Strategies can be switched or selected at runtime without modifying the client code. 
+This allows for dynamic behavior and adaptability based on different conditions or requirements.
+3. Reusability: Strategies can be reused across multiple contexts or scenarios, reducing code duplication. 
+Once a strategy is implemented, it can be easily applied wherever needed, promoting code reusability.
+4. Open/Closed Principle: The Strategy pattern follows the Open/Closed Principle, allowing new strategies to 
+be added without modifying existing code. It promotes extensibility and prevents the need for extensive code 
+modifications.
+5. Testability: With strategies encapsulated in separate classes, they can be individually tested in 
+isolation, promoting easier unit testing. This helps ensure the correctness and reliability of each strategy 
+implementation.
+
+### Cons
+1. Increased Complexity: Implementing the Strategy pattern can add complexity to the codebase, as it requires 
+creating multiple strategy classes and managing the interaction between the context and strategies.
+2. Increased Number of Classes: Applying the Strategy pattern may result in a larger number of classes, 
+which can make the codebase more extensive. This can sometimes be overwhelming for simpler projects or 
+scenarios with limited strategy variations.
+3. Dependency Injection: The Strategy pattern often relies on dependency injection to provide the 
+appropriate strategy to the context. While dependency injection can offer flexibility, it adds complexity 
+and may require an additional framework or infrastructure.
+
+
+
