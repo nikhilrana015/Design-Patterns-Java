@@ -285,5 +285,54 @@ scenarios with limited strategy variations.
 appropriate strategy to the context. While dependency injection can offer flexibility, it adds complexity 
 and may require an additional framework or infrastructure.
 
+## [8. Chain Of Responsibility Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/ChainOfResponsibility_Design_Pattern)
+The Chain of Responsibility design pattern is a behavioral pattern that allows a request to be passed 
+through a series of handlers until it is handled by an appropriate handler or is not handled at all. 
+Each handler in the chain has the ability to handle the request or pass it on to the next handler.
 
+Problem without use of chain of responsibility design pattern are:
+- Tight Coupling: Without the Chain of Responsibility pattern, the client code becomes tightly coupled to 
+specific handler implementations. The client needs to have direct knowledge of the handlers and their order,
+which can make the code more rigid and harder to maintain.
+- Lack of Flexibility: Handling logic is directly implemented in the client code, making it less flexible
+to accommodate changes or variations in the handling process. Adding or modifying handling logic would 
+require modifying the client code itself, leading to potential code duplication or tangled logic.
+- Difficulty in Extensibility: Adding new handlers or modifying the handling logic requires making 
+changes to the client code, which violates the Open-Closed Principle. This can result in more brittle code 
+that is resistant to changes and lacks the ability to easily introduce new handling behaviors.
+- Violation of Single Responsibility Principle: Without the Chain of Responsibility pattern, 
+the client code becomes responsible for handling multiple types of requests, violating the 
+Single Responsibility Principle. This can lead to larger and more complex code segments that are harder 
+to understand, test, and maintain.
+- Lack of Centralized Control: Without the Chain of Responsibility pattern, there is no centralized control 
+or coordination of the request handling process. This can make it harder to manage the flow of requests 
+and enforce specific policies or rules.
 
+### Pros
+1. Decoupling: The pattern decouples the sender of a request from its receivers, allowing them to vary 
+independently. The sender does not need to know the specific handler that will handle the request, 
+promoting loose coupling.
+2. Flexibility and Extensibility: Handlers can be added or removed from the chain dynamically at runtime 
+without affecting the client code. This makes it easy to extend the chain of responsibility and introduce 
+new handlers without modifying existing code.
+3. Single Responsibility Principle: Each handler has a specific responsibility and focuses on handling a 
+particular type of request. This promotes the Single Responsibility Principle, making the codebase more 
+modular and easier to understand.
+4. Customizable Handling Order: The order of the handlers in the chain can be configured or modified, 
+allowing flexibility in defining the sequence of request handling. This enables customization based on 
+specific business rules or requirements.
+5. Improved Maintainability: The Chain of Responsibility pattern can improve code maintainability by 
+providing a clear and structured approach to handle different types of requests. Each handler is 
+responsible for its own logic, making it easier to modify or update individual handlers without affecting 
+others.
+
+### Cons
+1. Handling Guarantee: There is no guarantee that a request will be handled by any handler in the chain. 
+If the request is not handled by any handler, it may result in an unhandled request or require additional 
+handling logic in the client code.
+2. Performance Impact: The request may need to traverse through multiple handlers in the chain, 
+which can introduce a performance impact, especially if the chain is long or the request requires 
+processing from all handlers.
+3. Complexity: As the number of handlers and the complexity of the chain increase, the overall complexity 
+of the system can also increase. It may become harder to debug and trace the flow of requests through the 
+ chain.
