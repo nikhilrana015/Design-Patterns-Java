@@ -336,3 +336,53 @@ processing from all handlers.
 3. Complexity: As the number of handlers and the complexity of the chain increase, the overall complexity 
 of the system can also increase. It may become harder to debug and trace the flow of requests through the 
  chain.
+
+## [9. Proxy Design Pattern](https://github.com/nikhilrana015/Design-Patterns-Java/tree/main/com.nikhilrana/src/Proxy_Design_Pattern)
+The Proxy design pattern is a structural pattern that provides a surrogate or placeholder for another 
+object to control its access and behavior. It allows for additional functionality to be added to an object 
+without modifying its core implementation.
+
+Problems without use of proxy design pattern are:
+- Lack of Access Control: Without a proxy, there is no centralized mechanism to control access to 
+sensitive or expensive resources. Clients can directly interact with the resource without any additional 
+validation or security checks, potentially leading to unauthorized access or misuse.
+- Performance Issues: Without a proxy, clients may need to directly access and manipulate resources, 
+even if it involves expensive or time-consuming operations. This can lead to performance bottlenecks, 
+inefficient resource utilization, and degraded system performance.
+- Performance Issues: Without a proxy, clients may need to directly access and manipulate resources, 
+even if it involves expensive or time-consuming operations. This can lead to performance bottlenecks, 
+inefficient resource utilization, and degraded system performance.
+- Inefficient Resource Utilization: In situations where resources are expensive or limited, not having a 
+proxy can lead to inefficient resource utilization. Proxies can implement strategies like caching or lazy 
+loading to optimize resource usage, which may be missing without the pattern.
+
+### Pros
+1. Performance Optimization: Proxies can implement caching mechanisms or lazy loading strategies to optimize
+the performance of resource-intensive operations. They can defer the creation or loading of objects 
+until they are actually needed, improving efficiency and reducing unnecessary overhead.
+2. Remote Access: Proxies can act as a local representative for remote objects, allowing clients to 
+interact with them as if they were local. This enables transparent access to remote resources and 
+facilitates remote method invocation.
+3. Controlled Access: Proxies can control access to sensitive or expensive resources by implementing 
+security checks, authentication, or additional validation logic. This helps enforce access restrictions 
+and protect resources from unauthorized access.
+4. Simplified Interface: Proxies can provide a simplified interface to clients, hiding the complexity of 
+the underlying object or system. They can act as a facade, providing a unified and consistent interface 
+that encapsulates intricate details and simplifies client interactions.
+5. Logging and Auditing: Proxies can intercept method calls and add logging or auditing functionality 
+without modifying the original object. This enables tracking and monitoring of method invocations, 
+aiding in debugging, performance analysis, or compliance requirements.
+
+### Cons
+1. Increased Complexity: The introduction of proxy objects can add complexity to the codebase, as it 
+involves the creation of additional classes and coordination between the proxy and the real object. 
+This can make the code harder to understand and maintain, especially in complex systems.
+2. Performance Overhead: Depending on the implementation, the use of proxies can introduce additional overhead, 
+such as method interception, validation, or remote communication. Care should be taken to ensure that 
+the benefits of the proxy outweigh any potential performance impact.
+3. Tight Coupling: In some cases, the proxy may need to have knowledge of the real object's interface or 
+implementation details. This can introduce a tight coupling between the proxy and the real object, 
+potentially affecting modularity and flexibility.
+4. Potential Synchronization Issues: If multiple clients access the same proxy concurrently, 
+synchronization mechanisms may be required to ensure thread-safety and prevent race conditions. 
+This adds complexity and potential performance implications.
